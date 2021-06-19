@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 1, g: 0.7229238, b: 0.36294332, a: 1}
   m_AmbientGroundColor: {r: 1, g: 0.7229238, b: 0.36294332, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: da976b1a4f7ebb949b0f71341e4f1821, type: 2}
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.2735849, g: 0.2722944, b: 0.2722944, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0796cfccc072b874fb4b9fbf0abda1a8, type: 2}
   m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.51118624, g: 0.5688323, b: 0.6249705, a: 1}
+  m_IndirectSpecularColor: {r: 0.2947442, g: 0.36145148, b: 0.47095096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -867,9 +867,9 @@ MonoBehaviour:
   rotationSpeed: 250
   animator: {fileID: 643061960}
   Rb: {fileID: 643061958}
-  jumpHeight: 2
+  jumpHeight: 0.4
   groundCheck: {fileID: 1582052293}
-  groundDistance: 0.1
+  groundDistance: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 8
@@ -1984,6 +1984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788477006}
   - component: {fileID: 1788477005}
+  - component: {fileID: 1788477007}
   m_Layer: 0
   m_Name: Directional light
   m_TagString: Untagged
@@ -2002,7 +2003,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.8145415, b: 0.514151, a: 1}
+  m_Color: {r: 0.22064792, g: 0.21680313, b: 0.2264151, a: 1}
   m_Intensity: 2.86
   m_Range: 10
   m_SpotAngle: 30
@@ -2067,6 +2068,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 52.31, y: -173, z: 2.76799}
+--- !u!114 &1788477007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788477004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc7ae138626cd148a54b0ca1753fc2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationScale: 9
+  timeSpeed: 30
+  min: 0
+  grados: 0
 --- !u!1001 &1817696807
 PrefabInstance:
   m_ObjectHideFlags: 0
