@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33699714505366668}
   - component: {fileID: 23487459743670650}
   - component: {fileID: 95301439976351390}
+  - component: {fileID: 949761178304734809}
   m_Layer: 0
   m_Name: Rock1
   m_TagString: Untagged
@@ -102,3 +103,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &949761178304734809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835165246915658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.946733, y: 6.299431, z: 7.9827924}
+  m_Center: {x: -0.052956343, y: 3.1419826, z: 0.06308055}

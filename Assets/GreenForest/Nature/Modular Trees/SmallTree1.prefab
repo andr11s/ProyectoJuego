@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 19370008}
   - component: {fileID: 3370008}
   - component: {fileID: 2370008}
+  - component: {fileID: 7186783346847096267}
   m_Layer: 0
   m_Name: SmallTree1
   m_TagString: Untagged
@@ -93,6 +94,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7186783346847096267
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 12.945906
+  m_Direction: 1
+  m_Center: {x: 0.01, y: 6.3799334, z: 0.059264064}
 --- !u!21 &2170008
 Material:
   serializedVersion: 6

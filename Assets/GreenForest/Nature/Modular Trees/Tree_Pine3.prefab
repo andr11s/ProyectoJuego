@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 19323512}
   - component: {fileID: 3323512}
   - component: {fileID: 2323512}
+  - component: {fileID: 1046727196501762010}
   m_Layer: 0
   m_Name: Tree_Pine3
   m_TagString: Untagged
@@ -84,7 +85,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -93,6 +94,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &1046727196501762010
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.52
+  m_Height: 6.810747
+  m_Direction: 1
+  m_Center: {x: -0.02, y: 3.41, z: -0.15}
 --- !u!21 &2123510
 Material:
   serializedVersion: 6
