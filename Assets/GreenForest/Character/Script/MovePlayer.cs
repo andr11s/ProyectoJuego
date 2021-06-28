@@ -20,6 +20,19 @@ public class MovePlayer : MonoBehaviour
 
     bool isGrounded;
 
+    public float velocidaddemovimiento = 5.0f;
+    public float velocidaddeRotacion = 200.0f;
+
+
+    public float velocidadInicial;
+    public float velocidadAgachado;
+
+    void Start()
+    {
+        velocidadInicial = velocidaddemovimiento;
+        velocidadAgachado = velocidaddemovimiento * 0.5f;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +49,15 @@ public class MovePlayer : MonoBehaviour
       if(Input.GetKey("q")){
         animator.SetBool("Tecla",false);
         animator.Play("pelear");
-    }
+       }
+
+        if(Input.GetKey(KeyCode.LeftControl)){
+            animator.SetBool("Agachar",true);
+            velocidaddemovimiento = velocidadAgachado;
+       }else{
+           animator.SetBool("Agachar",false);
+            velocidaddemovimiento = velocidadInicial;
+       }
  
     if(x>0 || x<0 || y>0 || y<0){
         animator.SetBool("Tecla",true);
