@@ -27,10 +27,29 @@ public class MovePlayer : MonoBehaviour
     public float velocidadInicial;
     public float velocidadAgachado;
 
+
+    public bool atacar;
+    public bool avanzar;
+    public float impulsoGolpe = 10f;
+
     void Start()
     {
         velocidadInicial = velocidaddemovimiento;
         velocidadAgachado = velocidaddemovimiento * 0.5f;
+    }
+
+    
+    void FixedUpdate()
+    {
+        if(!atacar){
+            transform.Rotate(0,x * Time.deltaTime * rotationSpeed, 0);
+
+            transform.Translate(0, 0, y * Time.deltaTime * runSpeed);
+        } 
+        if(avanzar)
+        {
+            Rb.velocity = transform.forward * impulsoGolpe;   
+        }
     }
 
     // Update is called once per frame
@@ -39,37 +58,48 @@ public class MovePlayer : MonoBehaviour
     x = Input.GetAxis("Horizontal");
     y = Input.GetAxis("Vertical");
 
-    transform.Rotate(0,x * Time.deltaTime * rotationSpeed, 0);
-
-    transform.Translate(0, 0, y * Time.deltaTime * runSpeed);
     
     animator.SetFloat("VectorX",x);
     animator.SetFloat("VectorY",y);
 
-      if(Input.GetKey("q")){
-        animator.SetBool("Tecla",false);
-        animator.Play("pelear");
-       }
-
-        if(Input.GetKey(KeyCode.LeftControl)){
-            animator.SetBool("Agachar",true);
-            velocidaddemovimiento = velocidadAgachado;
-       }else{
-           animator.SetBool("Agachar",false);
-            velocidaddemovimiento = velocidadInicial;
-       }
- 
-    if(x>0 || x<0 || y>0 || y<0){
-        animator.SetBool("Tecla",true);
+     if(Input.GetMouseButtonDown(0) && !atacar){
+                    animator.SetTrigger("Golpear");
+                    atacar = true;
     }
 
+    if(!atacar){
+        if(Input.GetKey("q")){
+                animator.SetBool("Tecla",false);
+                animator.Play("pelear");
+            }
+ 
+            if(Input.GetKey(KeyCode.LeftControl)){
+                    animator.SetBool("Agachar",true);
+                    velocidaddemovimiento = velocidadAgachado;
+            }else{
+                animator.SetBool("Agachar",false);
+                    velocidaddemovimiento = velocidadInicial;
+            }
+        
+            
+    }
+ 
     isGrounded = Physics.CheckSphere(groundCheck.position,groundDistance,groundMask);
 
     if(Input.GetKey("space") && isGrounded){
         animator.Play("jsaltar"); 
+       
         Invoke("jump",1);
     }
 
+    if(atacar)
+    {
+        atacar = false; 
+    }
+
+    if(x>0 || x<0 || y>0 || y<0){
+                animator.SetBool("Tecla",true);
+   }
 
     }
 
@@ -77,5 +107,16 @@ public class MovePlayer : MonoBehaviour
         Rb.AddForce(Vector3.up*jumpHeight,ForceMode.Impulse);
     }
 
-    
+    public void DejardeGolpear(){
+        atacar = false;
+        avanzar = false;
+    }
+
+    public void avanzarSolo(){
+        avanzar = true;
+    }
+
+    public void dejodeAvanzar(){
+        avanzar = false;
+    }
 }

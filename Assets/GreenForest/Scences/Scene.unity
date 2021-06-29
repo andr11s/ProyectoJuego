@@ -956,6 +956,13 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  velocidaddemovimiento: 5
+  velocidaddeRotacion: 200
+  velocidadInicial: 0
+  velocidadAgachado: 0
+  atacar: 0
+  avanzar: 0
+  impulsoGolpe: 10
 --- !u!95 &643061960 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 44c32eba126c9df4c89d06332cf7e286, type: 3}
@@ -2746,6 +2753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979900303}
   - component: {fileID: 1979900304}
+  - component: {fileID: 1979900305}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2786,6 +2794,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!95 &1979900305
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979900302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9176d2e8a52a3e4897842286a2bb793, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1998294388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8e11e18451be5614bbc355f5024668d0, type: 3}
